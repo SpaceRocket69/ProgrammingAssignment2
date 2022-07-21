@@ -1,15 +1,27 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## Creates matrix and safes inverse
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  
+  m <<- matrix(sample.int(9, 9, replace = FALSE), nrow = 3, ncol = 3)
+  
+  inverseMatrix <<- NULL
+  
+  return(m)
+  
 }
 
 
-## Write a short comment describing this function
+## Inverts matrix
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  
+  if(!is.null(inverseMatrix)) {
+    return(inverseMatrix)
+  }
+  
+  inverseMatrix <<- solve(m)
+  
 }
