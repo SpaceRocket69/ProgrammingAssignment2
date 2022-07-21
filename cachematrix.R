@@ -1,11 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Creates matrix and safes inverse
+## Creates a matrix and safes an inverse of the matrix after
+## the function 'cacheSolve' is executed
 
 makeCacheMatrix <- function(x = matrix()) {
   
-  m <<- matrix(sample.int(9, 9, replace = FALSE), nrow = 3, ncol = 3)
+  m <<- x
   
   inverseMatrix <<- NULL
   
@@ -14,11 +13,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Inverts matrix
+## Inverts the matrix which is given to the 'makeCacheMatrix' function
 
 cacheSolve <- function(x, ...) {
   
   if(!is.null(inverseMatrix)) {
+    message("Getting cached data")
     return(inverseMatrix)
   }
   
